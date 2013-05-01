@@ -1,4 +1,4 @@
-# The only Stripe form builder for Laravel
+# The Stripe form builder for Laravel
 
 When integrating Stripe in your blade views wouldn't it be awesome to just say `{{ StripeForm::build(25) }}` and have a full Stripe.js enabled form embedded with a charge of $25?
 
@@ -25,3 +25,7 @@ Instead of worrying about the ugly syntax of creating an anchor tag with a long 
 `ConnectButton::button()`
 
 Or for rapid prototyping, you can use `ConnectButton::buttonWithStyle()` to dump the required style in-line
+
+## Alternate configuration
+
+In combination with some of the other Stripe packages I am working with, I have made it so that a stripe.php config file can be shared with the other packages. Currently all that is needed is a 'clientId' property in the array.
