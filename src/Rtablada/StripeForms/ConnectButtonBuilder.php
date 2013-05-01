@@ -58,7 +58,13 @@ class ConnectButtonBuilder
 		);
 		$query = http_build_query($data);
 		$url = "https://connect.stripe.com/oauth/authorize?{$query}";
-		$button = "<a href=\"{$url}\" class=\"stripe-connect\"><span>Connect with Stripe</span></a>";
+		return "<a href=\"{$url}\" class=\"stripe-connect\"><span>Connect with Stripe</span></a>";
+		
+	}
+
+	public function buttonWithStyle()
+	{
+		$button = $this->button();
 		$styleStub = \File::get(__DIR__ . '/style.stub.txt');
 		$style = "<style>{$styleStub}</style>";
 
