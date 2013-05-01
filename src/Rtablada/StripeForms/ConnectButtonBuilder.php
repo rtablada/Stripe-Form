@@ -76,7 +76,7 @@ class ConnectButtonBuilder
 		if($clientId = \Config::get('stripe.clientId')){
 			return $clientId;
 		} else {
-			return \Config::get('StripeForms::clientId');
+			return \Config::get('stripe-forms::clientId');
 		}
 	}
 }
