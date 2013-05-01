@@ -22,3 +22,6 @@ In your App config add this to your Facades: `'ConnectButton'   => 'Rtablada\Str
 
 Instead of worrying about the ugly syntax of creating an anchor tag with a long query string to build your Stripe Connect buttons, you can just use this builder.
 
+`ConnectButton::button()`
+
+Or for rapid prototyping, you can use `ConnectButton::buttonWithStyle()` to dump the required style in-line
