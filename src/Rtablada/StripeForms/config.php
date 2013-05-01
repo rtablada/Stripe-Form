@@ -12,16 +12,5 @@ return array(
 	|
 	*/
 
-	'clientId' => 'ca_1jUPP9MQpIjJzqQWLjo5OApDszNMcibc',
-
-	/*
-	|--------------------------------------------------------------------------
-	| Stripe Public API Key
-	|--------------------------------------------------------------------------
-	|
-	| This is the your public client API Key.
-	|
-	*/
-
-	'apiKey' => 'sk_test_CvKBwivTjwonEh2kij9ZRKHo',
+	'clientId' => 'CLIENT_ID',
 );
