@@ -18,5 +18,6 @@
             "Rtablada\\StripeForms": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "license": "MIT"
 }
