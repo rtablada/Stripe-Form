@@ -56,7 +56,7 @@ class ConnectButtonBuilder
 			'scope'			=> 'read_write',
 			'state'			=> $this->csrfToken,
 			'stripe_user'		=> $userData
-		);
+		); var_dump($data);
 		$query = http_build_query($data);
 		$url = "https://connect.stripe.com/oauth/authorize?{$query}";
 		return "<a href=\"{$url}\" class=\"stripe-connect\"><span>Connect with Stripe</span></a>";
