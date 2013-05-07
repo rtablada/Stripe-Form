@@ -58,7 +58,6 @@ class ConnectButtonBuilder
 			'stripe_user'		=> $userData
 		);
 		$query = http_build_query($data);
-		echo $query;
 		$url = "https://connect.stripe.com/oauth/authorize?{$query}";
 		return "<a href=\"{$url}\" class=\"stripe-connect\"><span>Connect with Stripe</span></a>";
 		
