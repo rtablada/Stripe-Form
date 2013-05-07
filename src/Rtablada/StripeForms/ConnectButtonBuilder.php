@@ -46,7 +46,7 @@ class ConnectButtonBuilder
 	 * Creates a Stripe Connect Button with style
 	 * @return string
 	 */
-	public function button()
+	public function button($userData)
 	{
 		$clientId = $this->getClientId();
 
@@ -54,7 +54,8 @@ class ConnectButtonBuilder
 			'response_type'	=> 'code',
 			'client_id'		=> $clientId,
 			'scope'			=> 'read_write',
-			'state'			=> $this->csrfToken
+			'state'			=> $this->csrfToken,
+			'stripe_user'		=> $userData
 		);
 		$query = http_build_query($data);
 		$url = "https://connect.stripe.com/oauth/authorize?{$query}";
@@ -62,9 +63,9 @@ class ConnectButtonBuilder
 		
 	}
 
-	public function buttonWithStyle()
+	public function buttonWithStyle($userData)
 	{
-		$button = $this->button();
+		$button = $this->button($userData);
 		$styleStub = \File::get(__DIR__ . '/style.stub.txt');
 		$style = "<style>{$styleStub}</style>";
 
