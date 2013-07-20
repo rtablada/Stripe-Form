@@ -48,11 +48,11 @@ class ConnectButtonBuilder
 	 */
 	public function button($userData)
 	{
-		$clientId = $this->getClientId();
+		$client_id = $this->getClientId();
 
 		$data = array(
 			'response_type'	=> 'code',
-			'client_id'		=> $clientId,
+			'client_id'		=> $client_id,
 			'scope'			=> 'read_write',
 			'state'			=> $this->csrfToken,
 			'stripe_user'		=> $userData
@@ -60,7 +60,7 @@ class ConnectButtonBuilder
 		$query = http_build_query($data);
 		$url = "https://connect.stripe.com/oauth/authorize?{$query}";
 		return "<a href=\"{$url}\" class=\"stripe-connect\"><span>Connect with Stripe</span></a>";
-		
+
 	}
 
 	public function buttonWithStyle($userData)
@@ -74,10 +74,10 @@ class ConnectButtonBuilder
 
 	public function getClientId()
 	{
-		if($clientId = \Config::get('stripe.clientId')){
-			return $clientId;
+		if($client_id = \Config::get('stripe.client_id')){
+			return $client_id;
 		} else {
-			return \Config::get('stripe-forms::stripe.clientId');
+			return \Config::get('stripe-forms::stripe.client_id');
 		}
 	}
 }
